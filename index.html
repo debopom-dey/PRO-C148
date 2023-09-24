@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+
+  <body>
+
+    <a-scene>
+      <a-camera position="0 5 15"></a-camera>
+      <a-a-assets>
+        <a-asset-item id="bench" src="assets/bench/scene.gltf"></a-asset-item>
+        <a-asset-item id="road" src="assets/street/scene.gltf"></a-asset-item>
+        <a-asset-item id="streetlight" src="assets/lamp/scene.gltf"></a-asset-item>
+        <a-asset-item id="cat" src="assets/cat/scene.gltf"></a-asset-item>
+        <a-asset-item id="woman" src="assets/woman_dress_2/scene.gltf"></a-asset-item>
+      </a-a-assets>
+
+      <a-sky color="black"></a-sky>
+
+      <a-box
+        id="background-scene"
+        src="assets/background.jpg"
+        position="0 13 -4"
+        width="35"
+        height="30"
+      >
+      </a-box>
+
+      <a-entity shadow="receive:true;">
+        <a-entity
+          scale="0.015 0.03 0.026"
+          gltf-model="#road"
+          position="0 0 3"
+          rotation="0 90 0"
+        ></a-entity>
+      </a-entity>
+
+      <a-entity
+      scale="0.4 0.6 0.4"
+      gltf-model="#streetlight"
+      position="-6 -1 0"
+      shadow="cast:true;"
+    ></a-entity>
+
+      <a-entity
+        scale="1.5 1.5 1.5"
+        gltf-model="#bench"
+        position="0 0 4"
+        shadow="cast:true;"
+      ></a-entity>
+
+      <a-entity
+        scale="0.0025 0.0025 0.003"
+        gltf-model="#woman"
+        position="-2 0.4 3"
+        shadow="cast:true;"
+      ></a-entity>
+
+      <a-entity
+        scale="0.025 0.025 0.025"
+        gltf-model="assets/cat/scene.gltf"
+        position="3 1.5 2"
+        rotation="0 50 0"
+        shadow="cast:true;"
+      ></a-entity>
+
+      <a-entity
+        light="type: point; castShadow: true; color: yellow; intensity: 2"
+        position="-6 9 0"
+      ></a-entity>
+      <a-entity light="type: ambient;"> </a-entity>
+    </a-scene>
+  </body>
+</html>
